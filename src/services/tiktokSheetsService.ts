@@ -98,7 +98,7 @@ export const DIRECT_TIKTOK_ITEMS: TikTokItem[] = [
     username: 'devon.shae',
     creatorName: 'Devon Shae',
     creatorHandle: '@devon.shae',
-    profilePic: 'https://files.catbox.moe/zysza7.jpeg?w=150&auto=format&fit=crop&q=80',
+    profilePic: 'https://files.catbox.moe/zysza7.jpeg',
     caption: 'New vibes ✨',
     hashtags: ['#devonshae', '#tiktok', '#viral'],
     likes: '1.2M',
