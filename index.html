@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        try {
+          var currentFetch = typeof window !== 'undefined' && window.fetch ? window.fetch.bind(window) : null;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return currentFetch;
+            },
+            set: function(val) {
+              currentFetch = val;
+            }
+          });
+        } catch (e) {
+          try {
+            if (typeof Window !== 'undefined' && Window.prototype) {
+              var desc = Object.getOwnPropertyDescriptor(Window.prototype, 'fetch');
+              if (desc && !desc.set) {
+                Object.defineProperty(Window.prototype, 'fetch', {
+                  configurable: true,
+                  enumerable: desc.enumerable,
+                  get: desc.get,
+                  set: function(v) {
+                    Object.defineProperty(this, 'fetch', {
+                      value: v,
+                      writable: true,
+                      configurable: true,
+                      enumerable: true
+                    });
+                  }
+                });
+              }
+            }
+          } catch (err) {}
+        }
+      })();
+    </script>
+    <title>THIAGOVSC — Music • Reels • TikTok • Luxury Life</title>
+    <meta name="description" content="THIAGOVSC — music, visual culture, Instagram Reels, TikTok and luxury lifestyle." />
+    <meta property="og:title" content="THIAGOVSC — Music • Reels • TikTok • Luxury Life" />
+    <meta property="og:description" content="THIAGOVSC — music, visual culture, Instagram Reels, TikTok and luxury lifestyle." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0D0714" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230D0714'/%3E%3Cpath d='M25 35h50M50 35v40M32 55h36' stroke='%23D92CFF' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Geist+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Mr+Dafoe&family=Damion&family=Yellowtail&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#120A1D] text-[#FAF8FC] antialiased selection:bg-[#D92CFF]/30 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
