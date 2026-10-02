@@ -88,18 +88,17 @@ export const DIRECT_TIKTOK_ITEMS: TikTokItem[] = [
     date: 'Reciente',
     badge: 'EXCLUSIVO',
   },
-    {
+      {
     id: 'tiktok-04',
     videoId: '7574956307921259807',
     originalUrl: 'https://www.tiktok.com/@devon.shae/video/7574956307921259807',
-    // 👇 Aquí pones los links directos de la nube
-    videoUrl: 'https://files.catbox.moe/EL_LINK_DE_TU_VIDEO.mp4',
-    coverUrl: 'https://files.catbox.moe/EL_LINK_DE_TU_PORTADA.jpg', 
+    // Usando un video real de prueba para que veas el diseño funcionando:
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-adjusting-the-volume-of-an-audio-mixer-41457-large.mp4',
+    coverUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400&auto=format&fit=crop', 
     username: 'devon.shae',
     creatorName: 'Devon Shae',
     creatorHandle: '@devon.shae',
-    // 👇 También puedes alojar la foto de perfil en la nube
-    profilePic: 'https://files.catbox.moe/FOTO_PERFIL_DEVON.jpg',
+    profilePic: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     caption: 'New vibes ✨',
     hashtags: ['#devonshae', '#tiktok', '#viral'],
     likes: '1.2M',
