@@ -88,6 +88,30 @@ export const DIRECT_TIKTOK_ITEMS: TikTokItem[] = [
     date: 'Reciente',
     badge: 'EXCLUSIVO',
   },
+    {
+    id: 'tiktok-04',
+    videoId: '7574956307921259807',
+    originalUrl: 'https://www.tiktok.com/@devon.shae/video/7574956307921259807',
+    // 👇 Aquí pones los links directos de la nube
+    videoUrl: 'https://files.catbox.moe/EL_LINK_DE_TU_VIDEO.mp4',
+    coverUrl: 'https://files.catbox.moe/EL_LINK_DE_TU_PORTADA.jpg', 
+    username: 'devon.shae',
+    creatorName: 'Devon Shae',
+    creatorHandle: '@devon.shae',
+    // 👇 También puedes alojar la foto de perfil en la nube
+    profilePic: 'https://files.catbox.moe/FOTO_PERFIL_DEVON.jpg',
+    caption: 'New vibes ✨',
+    hashtags: ['#devonshae', '#tiktok', '#viral'],
+    likes: '1.2M',
+    bookmarks: '120K',
+    views: '4.5M',
+    commentsCount: '8.4K',
+    shares: '52K',
+    soundName: 'original sound - devon.shae',
+    status: 'activo',
+    date: 'Reciente',
+    badge: 'NUEVO',
+  }
 ];
 
 export const FALLBACK_TIKTOK_ITEMS = DIRECT_TIKTOK_ITEMS;
