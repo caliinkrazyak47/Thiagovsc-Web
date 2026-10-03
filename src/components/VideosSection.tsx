@@ -580,9 +580,10 @@ export const VideosSection: React.FC = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header: Urban Live Broadcast Brand */}
         <div className="text-center mb-10 sm:mb-14">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-condensed font-black tracking-tight uppercase text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-            <span className="bg-gradient-to-r from-[#25F4EE] via-[#FAF8FC] to-[#D92CFF] bg-clip-text text-transparent">
-              TV ONLINE
+                    <h2 className="flex items-center justify-center gap-3 text-4xl sm:text-6xl md:text-7xl font-condensed font-black tracking-tight uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+            <span className="text-white">TV</span>
+            <span className="bg-gradient-to-r from-[#D92CFF] via-[#F03BBE] to-[#7136FF] bg-clip-text text-transparent">
+              ONLINE
             </span>
           </h2>
 
