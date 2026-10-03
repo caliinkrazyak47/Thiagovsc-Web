@@ -58,7 +58,7 @@ export const LogoMarqueePreview: React.FC = () => {
     <div className="w-full mt-16 sm:mt-24 pt-10 pb-10 border-t border-white/10 overflow-hidden select-none relative group">
       {/* El grupo [animation-play-state:paused] detiene el movimiento al pasar el mouse encima para poder hacer click */}
       <div 
-        className="animate-marquee group-hover:[animation-play-state:paused] flex items-center whitespace-nowrap w-max gap-12 sm:gap-24 px-8"
+        className="animate-marquee group-hover:[animation-play-state:paused] flex items-center whitespace-nowrap w-max gap-16 sm:gap-28 px-8"
         style={{ animationDuration: '60s' }} // Hace que vayan mucho más despacio
       >
         {logos.concat(logos).concat(logos).map((logo, i) => (
@@ -67,15 +67,15 @@ export const LogoMarqueePreview: React.FC = () => {
             href={logo.link}
             target="_blank"
             rel="noopener noreferrer"
-            // Tamaños ENORMES y robustos para todos por igual (estilo Tinder grande)
-            className="flex items-center justify-center shrink-0 cursor-pointer w-36 sm:w-48 md:w-56 h-16 sm:h-20 md:h-24"
+            // Se quita el ancho fijo (w-*) y se deja solo un alto (h-*) idéntico para todos. Así todos escalan parejo.
+            className="flex items-center justify-center shrink-0 cursor-pointer h-12 sm:h-16 md:h-20"
             title={`Visitar ${logo.name}`}
           >
             <img 
               src={logo.url} 
               alt={logo.name} 
-              // max-h-full y max-w-full aseguran que escalen hasta el borde del contenedor grande sin deformarse
-              className="max-h-full max-w-full object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              // h-full y w-auto obligan a que la imagen tenga EXACTAMENTE la misma altura que su contenedor, igualando todos al nivel de Tinder
+              className="h-full w-auto object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
             />
           </a>
         ))}
