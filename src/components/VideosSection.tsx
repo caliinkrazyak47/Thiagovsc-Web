@@ -29,56 +29,34 @@ export interface TVVideoTrack {
   duration?: string;
 }
 
-// Client Logos Marquee (EverWonder Studio Style)
-// Client Logos Marquee (EverWonder Studio Style)
+// Minimal Urban Logo Marquee Preview at the bottom of the section
 export const LogoMarqueePreview: React.FC = () => {
-  // Solo vectores SVG perfectamente recortados para asegurar que todos escalen parejo a la misma altura
-  const logos = [
-    { name: 'OnlyFans', url: '/logos/onlyfans-wordmark-1.svg', link: 'https://onlyfans.com/' },
-    { name: 'Tinder', url: '/logos/tinder.svg', link: 'https://tinder.com/' },
-    { name: 'Hinge', url: '/logos/hinge.svg', link: 'https://hinge.co/' },
-    { name: 'TikTok', url: '/logos/tiktok.svg', link: 'https://tiktok.com/' },
-    { name: 'Netflix', url: '/logos/netflix.svg', link: 'https://netflix.com/' },
-    { name: 'Fox', url: '/logos/fox-3.svg', link: 'https://fox.com/' },
-    { name: 'Stake', url: '/logos/Stake_logo.svg', link: 'https://stake.com/' },
-    { name: 'Prime Video', url: '/logos/primevideo.svg', link: 'https://primevideo.com/' },
-    { name: 'YouTube', url: '/logos/youtube.svg', link: 'https://youtube.com/' },
-    { name: 'Pornhub', url: '/logos/Pornhub-logo.svg', link: 'https://pornhub.com/' },
-    { name: 'Twitch', url: '/logos/Twitch_logo.svg', link: 'https://twitch.tv/' },
-    { name: 'Instagram', url: '/logos/Instagram_logo.svg', link: 'https://instagram.com/' },
-    { name: 'Spotify', url: '/logos/Spotify_logo_with_text.svg', link: 'https://spotify.com/' }
+  const brands = [
+    'RENTLUX VIP',
+    'THIAGOVSC TV',
+    'DOLBY ATMOS',
+    'SONY 4K HDR',
+    'LIVE BROADCAST',
+    'URBAN BEATS',
+    'STREET CULTURE',
+    'HIGH FIDELITY',
   ];
 
   return (
-    <div className="w-full mt-16 sm:mt-24 pt-10 pb-10 border-t border-white/10 overflow-hidden select-none relative group">
-      {/* El grupo [animation-play-state:paused] detiene el movimiento al pasar el mouse encima para poder hacer click */}
-      <div 
-        className="animate-marquee group-hover:[animation-play-state:paused] flex items-center whitespace-nowrap w-max gap-16 sm:gap-28 px-8"
-        style={{ animationDuration: '60s' }} // Hace que vayan mucho mas despacio
-      >
-        {logos.concat(logos).concat(logos).map((logo, i) => (
-          <a 
-            key={`${logo.name}-${i}`} 
-            href={logo.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            // Dejamos el h-12/h-16 identico para la caja, eliminando el w-* para que las palabras largas se extiendan
-            className="flex items-center justify-center shrink-0 cursor-pointer h-12 sm:h-16 md:h-20"
-            title={`Visitar ${logo.name}`}
-          >
-            <img 
-              src={logo.url} 
-              alt={logo.name} 
-              // Al ser SVG puros, h-full y w-auto forzaran a que TODOS compartan la misma altura titanica de Tinder sin trucos
-              className="h-full w-auto object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
-            />
-          </a>
+    <div className="w-full mt-16 sm:mt-20 pt-8 pb-4 border-t border-white/10 overflow-hidden select-none opacity-60 hover:opacity-100 transition-opacity">
+      <div className="animate-marquee flex items-center gap-10 whitespace-nowrap">
+        {brands.concat(brands).map((brand, i) => (
+          <div key={`brand-${i}`} className="flex items-center gap-6 shrink-0">
+            <span className="text-xs sm:text-sm font-mono-tech tracking-[0.25em] text-[#92909B] uppercase font-bold hover:text-[#25F4EE] transition-colors">
+              {brand}
+            </span>
+            <span className="text-[#D92CFF] text-[10px]">✦</span>
+          </div>
         ))}
       </div>
     </div>
   );
 };
-
 
 export const VideosSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
