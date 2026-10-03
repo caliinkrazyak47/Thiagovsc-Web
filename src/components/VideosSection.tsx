@@ -46,13 +46,12 @@ export const LogoMarqueePreview: React.FC = () => {
     { name: 'CNN', url: '/logos/cnn.svg', link: 'https://cnn.com/' },
     { name: 'NFL', url: '/logos/nfl.svg', link: 'https://nfl.com/' },
     { name: 'Pornhub', url: '/logos/pornhub.png', link: 'https://pornhub.com/' },
-    { name: 'NBA', url: 'https://cdn.worldvectorlogo.com/logos/nba-1.svg', link: 'https://nba.com/' },
-    { name: 'Red Bull', url: 'https://cdn.worldvectorlogo.com/logos/redbull-1.svg', link: 'https://redbull.com/' },
-    { name: 'Paramount+', url: 'https://cdn.worldvectorlogo.com/logos/paramount-plus-1.svg', link: 'https://paramountplus.com/' },
-    { name: 'CBS', url: 'https://cdn.worldvectorlogo.com/logos/cbs-1.svg', link: 'https://cbs.com/' },
-    { name: 'NBC', url: 'https://cdn.worldvectorlogo.com/logos/nbc-4.svg', link: 'https://nbc.com/' },
-    { name: 'Fox', url: 'https://cdn.worldvectorlogo.com/logos/fox-3.svg', link: 'https://fox.com/' },
-    { name: 'Instagram', url: '/logos/instagram.png', link: 'https://instagram.com/' }
+    { name: 'NBA', url: '/logos/nba-1.svg', link: 'https://nba.com/' },
+    { name: 'Red Bull', url: '/logos/redbull-1.svg', link: 'https://redbull.com/' },
+    { name: 'CBS', url: '/logos/cbs-1.svg', link: 'https://cbs.com/' },
+    { name: 'Fox', url: '/logos/fox-3.svg', link: 'https://fox.com/' },
+    { name: 'Instagram', url: '/logos/instagram.png', link: 'https://instagram.com/' },
+    { name: 'Stake', url: '/logos/Stake_logo.svg', link: 'https://stake.com/' }
   ];
 
   return (
