@@ -29,41 +29,30 @@ export interface TVVideoTrack {
   duration?: string;
 }
 
-// Massive Everwonder Studio-style Marquee
+// Minimal Urban Logo Marquee Preview at the bottom of the section
 export const LogoMarqueePreview: React.FC = () => {
-  const words = [
-    'THIAGOVSC',
-    'TV ONLINE',
+  const brands = [
+    'RENTLUX VIP',
+    'THIAGOVSC TV',
+    'DOLBY ATMOS',
+    'SONY 4K HDR',
     'LIVE BROADCAST',
     'URBAN BEATS',
-    'EXCLUSIVE',
+    'STREET CULTURE',
+    'HIGH FIDELITY',
   ];
 
   return (
-    <div className="w-full mt-16 sm:mt-24 pt-10 pb-10 border-t border-white/10 overflow-hidden select-none hover:bg-white/[0.02] transition-colors relative">
-      {/* Sombras a los lados para que el texto desaparezca suavemente */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#120A1D] via-transparent to-[#120A1D] z-10 pointer-events-none" />
-      
-      <div className="animate-marquee flex items-center whitespace-nowrap w-max">
-        {/* Repetimos la lista 4 veces para garantizar un loop infinito perfecto */}
-        {words.concat(words).concat(words).concat(words).map((word, i) => {
-          // Alternamos: Una palabra sólida y la siguiente hueca con borde blanco (stroke)
-          const isOutline = i % 2 !== 0;
-          
-          return (
-            <div key={`brand-${i}`} className="flex items-center shrink-0">
-              <span 
-                className="text-6xl sm:text-8xl md:text-[9rem] leading-none font-condensed font-black tracking-tighter uppercase px-6 transition-transform hover:scale-105 cursor-default"
-                style={isOutline ? { WebkitTextStroke: '2px rgba(255,255,255,0.7)', color: 'transparent' } : { color: '#FAF8FC' }}
-              >
-                {word}
-              </span>
-              <span className="text-[#25F4EE] text-4xl sm:text-6xl md:text-7xl px-4 animate-pulse opacity-80">
-                ✦
-              </span>
-            </div>
-          );
-        })}
+    <div className="w-full mt-16 sm:mt-20 pt-8 pb-4 border-t border-white/10 overflow-hidden select-none opacity-60 hover:opacity-100 transition-opacity">
+      <div className="animate-marquee flex items-center gap-10 whitespace-nowrap">
+        {brands.concat(brands).map((brand, i) => (
+          <div key={`brand-${i}`} className="flex items-center gap-6 shrink-0">
+            <span className="text-xs sm:text-sm font-mono-tech tracking-[0.25em] text-[#92909B] uppercase font-bold hover:text-[#25F4EE] transition-colors">
+              {brand}
+            </span>
+            <span className="text-[#D92CFF] text-[10px]">✦</span>
+          </div>
+        ))}
       </div>
     </div>
   );
