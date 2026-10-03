@@ -38,20 +38,15 @@ export const LogoMarqueePreview: React.FC = () => {
     { name: 'Tinder', url: '/logos/tinder.svg', link: 'https://tinder.com/' },
     { name: 'Hinge', url: '/logos/hinge.svg', link: 'https://hinge.co/' },
     { name: 'TikTok', url: '/logos/tiktok.svg', link: 'https://tiktok.com/' },
-    { name: 'Netflix', url: '/logos/netflix.svg', link: 'https://www.netflix.com/' },
-    { name: 'Disney', url: '/logos/disney.svg', link: 'https://www.disney.com/' },
-    { name: 'Max', url: '/logos/max.svg', link: 'https://www.max.com/' },
+    { name: 'Netflix', url: '/logos/netflix.svg', link: 'https://netflix.com/' },
+    { name: 'Fox', url: '/logos/fox-3.svg', link: 'https://fox.com/' },
+    { name: 'Stake', url: '/logos/Stake_logo.svg', link: 'https://stake.com/' },
     { name: 'Prime Video', url: '/logos/primevideo.svg', link: 'https://primevideo.com/' },
     { name: 'YouTube', url: '/logos/youtube.svg', link: 'https://youtube.com/' },
-    { name: 'CNN', url: '/logos/cnn.svg', link: 'https://cnn.com/' },
-    { name: 'NFL', url: '/logos/nfl.svg', link: 'https://nfl.com/' },
-    { name: 'Pornhub', url: '/logos/pornhub.png', link: 'https://pornhub.com/' },
-    { name: 'NBA', url: '/logos/nba-1.svg', link: 'https://nba.com/' },
-    { name: 'Red Bull', url: '/logos/redbull-1.svg', link: 'https://redbull.com/' },
-    { name: 'CBS', url: '/logos/cbs-1.svg', link: 'https://cbs.com/' },
-    { name: 'Fox', url: '/logos/fox-3.svg', link: 'https://fox.com/' },
-    { name: 'Instagram', url: '/logos/instagram.png', link: 'https://instagram.com/' },
-    { name: 'Stake', url: '/logos/Stake_logo.svg', link: 'https://stake.com/' }
+    { name: 'Pornhub', url: '/logos/Pornhub-logo.svg', link: 'https://pornhub.com/' },
+    { name: 'Twitch', url: '/logos/Twitch_logo.svg', link: 'https://twitch.tv/' },
+    { name: 'Instagram', url: '/logos/Instagram_logo.svg', link: 'https://instagram.com/' },
+    { name: 'Spotify', url: '/logos/Spotify_logo_with_text.svg', link: 'https://spotify.com/' }
   ];
 
   return (
