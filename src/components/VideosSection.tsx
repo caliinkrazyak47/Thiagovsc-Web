@@ -31,27 +31,32 @@ export interface TVVideoTrack {
 
 // Client Logos Marquee (EverWonder Studio Style)
 export const LogoMarqueePreview: React.FC = () => {
-  // Local logos from public/logos/ directory, with Links to official websites
+  // Local logos from the user's LOGOS folder, scaled to match the size of Tinder/OnlyFans/Hinge SVGs
   const logos = [
-    { name: 'Netflix', url: '/logos/netflix.avif', link: 'https://www.netflix.com/' },
-    { name: 'Disney', url: '/logos/disney.avif', link: 'https://www.disney.com/' },
-    { name: 'OnlyFans', url: '/logos/onlyfans.svg', link: 'https://onlyfans.com/' },
-    { name: 'Pornhub', url: '/logos/pornhub.png', link: 'https://www.pornhub.com/' },
-    { name: 'Tinder', url: '/logos/tinder.svg', link: 'https://tinder.com/' },
-    { name: 'Hinge', url: '/logos/hinge.svg', link: 'https://hinge.co/' },
-    { name: 'CNN', url: '/logos/cnn.avif', link: 'https://www.cnn.com/' },
-    { name: 'Red Bull', url: '/logos/redbull.avif', link: 'https://www.redbull.com/' },
-    { name: 'NFL', url: '/logos/nfl.avif', link: 'https://www.nfl.com/' },
-    { name: 'CBS', url: '/logos/cbs.avif', link: 'https://www.cbs.com/' },
-    { name: 'NBC', url: '/logos/nbc.avif', link: 'https://www.nbc.com/' },
-    { name: 'NBA', url: '/logos/nba.avif', link: 'https://www.nba.com/' },
-    { name: 'FOX', url: '/logos/fox.avif', link: 'https://www.fox.com/' },
-    { name: 'YouTube', url: '/logos/youtube.avif', link: 'https://www.youtube.com/' },
-    { name: 'HBO Max', url: '/logos/hbomax.avif', link: 'https://www.max.com/' },
-    { name: 'FIFA', url: '/logos/fifa.avif', link: 'https://www.fifa.com/' },
-    { name: 'TNT', url: '/logos/tnt.avif', link: 'https://www.tntdrama.com/' },
-    { name: 'Universal', url: '/logos/universal.avif', link: 'https://www.universalpictures.com/' },
-    { name: 'Paramount+', url: '/logos/paramount.avif', link: 'https://www.paramountplus.com/' }
+    { name: 'OnlyFans', url: '/logos/onlyfans-wordmark-1.svg', link: 'https://onlyfans.com/', customScale: 'scale-100' },
+    { name: 'Tinder', url: '/logos/tinder.svg', link: 'https://tinder.com/', customScale: 'scale-100' },
+    { name: 'Hinge', url: '/logos/hinge.svg', link: 'https://hinge.co/', customScale: 'scale-100' },
+    { name: 'Pornhub', url: '/logos/pornhub.svg', link: 'https://www.pornhub.com/', customScale: 'scale-110' },
+    { name: 'TikTok', url: '/logos/tiktok-logo-2-3.svg', link: 'https://tiktok.com/', customScale: 'scale-100' },
+    { name: 'Instagram', url: '/logos/instagram-1.svg', link: 'https://instagram.com/', customScale: 'scale-100' },
+    { name: 'Kick', url: '/logos/KICK (White).svg', link: 'https://kick.com/', customScale: 'scale-110' },
+    { name: 'Stake', url: '/logos/Stake_logo.svg', link: 'https://stake.com/', customScale: 'scale-125' },
+    { name: 'Netflix', url: '/logos/netflix.avif', link: 'https://www.netflix.com/', customScale: 'scale-[1.8]' },
+    { name: 'Disney', url: '/logos/disney.avif', link: 'https://www.disney.com/', customScale: 'scale-[1.8]' },
+    { name: 'HBO Max', url: '/logos/HBO MAX.avif', link: 'https://www.max.com/', customScale: 'scale-[1.8]' },
+    { name: 'Prime Video', url: '/logos/PRIME VIDEO.avif', link: 'https://primevideo.com/', customScale: 'scale-[1.8]' },
+    { name: 'Universal', url: '/logos/6aaadbcddb38d964fac08e83_Universal.avif', link: 'https://universalpictures.com/', customScale: 'scale-[1.8]' },
+    { name: 'Paramount+', url: '/logos/PARAMOUNT PLUS.avif', link: 'https://paramountplus.com/', customScale: 'scale-[1.8]' },
+    { name: 'NBA', url: '/logos/nba.avif', link: 'https://www.nba.com/', customScale: 'scale-[1.8]' },
+    { name: 'NFL', url: '/logos/nfl.avif', link: 'https://www.nfl.com/', customScale: 'scale-[1.8]' },
+    { name: 'YouTube', url: '/logos/youtube.avif', link: 'https://www.youtube.com/', customScale: 'scale-[1.8]' },
+    { name: 'CNN', url: '/logos/cnn.avif', link: 'https://www.cnn.com/', customScale: 'scale-[1.8]' },
+    { name: 'Red Bull', url: '/logos/redbull.avif', link: 'https://www.redbull.com/', customScale: 'scale-[1.8]' },
+    { name: 'Hulu', url: '/logos/HULU.avif', link: 'https://hulu.com/', customScale: 'scale-[1.8]' },
+    { name: 'DAZN', url: '/logos/DAZN.avif', link: 'https://dazn.com/', customScale: 'scale-[1.8]' },
+    { name: 'FOX', url: '/logos/fox.avif', link: 'https://www.fox.com/', customScale: 'scale-[1.8]' },
+    { name: 'NBC', url: '/logos/nbc.avif', link: 'https://www.nbc.com/', customScale: 'scale-[1.8]' },
+    { name: 'CBS', url: '/logos/cbs.avif', link: 'https://www.cbs.com/', customScale: 'scale-[1.8]' }
   ];
 
   return (
@@ -67,15 +72,15 @@ export const LogoMarqueePreview: React.FC = () => {
             href={logo.link}
             target="_blank"
             rel="noopener noreferrer"
-            // Se quita el ancho fijo (w-*) y se deja solo un alto (h-*) idéntico para todos. Así todos escalan parejo.
-            className="flex items-center justify-center shrink-0 cursor-pointer h-12 sm:h-16 md:h-20"
+            // Dejamos el h-12/h-16 idéntico para la caja, pero usaremos el scale de cada imagen para compensar el margen invisible de los AVIF
+            className="flex items-center justify-center shrink-0 cursor-pointer h-12 sm:h-16 md:h-20 w-32 sm:w-40 md:w-48 overflow-visible"
             title={`Visitar ${logo.name}`}
           >
             <img 
               src={logo.url} 
               alt={logo.name} 
-              // h-full y w-auto obligan a que la imagen tenga EXACTAMENTE la misma altura que su contenedor, igualando todos al nivel de Tinder
-              className="h-full w-auto object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              // Se aplica el customScale a los avif para que se vean igual de grandes que Tinder/Onlyfans
+              className={`max-h-full max-w-full object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 transition-all duration-300 ${logo.customScale} hover:!scale-[2.0]`}
             />
           </a>
         ))}
