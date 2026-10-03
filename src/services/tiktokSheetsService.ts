@@ -93,8 +93,8 @@ export const DIRECT_TIKTOK_ITEMS: TikTokItem[] = [
     videoId: '7574956307921259807',
     originalUrl: 'https://www.tiktok.com/@devon.shae/video/7574956307921259807',
     // Usando un video real de prueba para que veas el diseño funcionando:
-    videoUrl: 'https://files.catbox.moe/zj6eqg.mp4',
-    coverUrl: 'https://files.catbox.moe/zysza7.jpeg', 
+    videoUrl: 'https://files.catbox.moe/zj6eqg.mp4#t=0.1',
+    coverUrl: ' ', 
     username: 'devon.shae',
     creatorName: 'Devon Shae',
     creatorHandle: '@devon.shae',
