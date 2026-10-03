@@ -56,10 +56,6 @@ export const LogoMarqueePreview: React.FC = () => {
 
   return (
     <div className="w-full mt-16 sm:mt-24 pt-10 pb-10 border-t border-white/10 overflow-hidden select-none relative group">
-      {/* Sombra de desvanecimiento a los lados */}
-      <div className="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#0C0514] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#0C0514] to-transparent z-10 pointer-events-none" />
-      
       {/* El grupo [animation-play-state:paused] detiene el movimiento al pasar el mouse encima para poder hacer click */}
       <div className="animate-marquee group-hover:[animation-play-state:paused] flex items-center whitespace-nowrap w-max gap-12 sm:gap-20 px-8">
         {logos.concat(logos).concat(logos).map((logo, i) => (
@@ -68,13 +64,14 @@ export const LogoMarqueePreview: React.FC = () => {
             href={logo.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center shrink-0 cursor-pointer"
+            className="flex items-center justify-center shrink-0 cursor-pointer"
             title={`Visitar ${logo.name}`}
           >
             <img 
               src={logo.url} 
               alt={logo.name} 
-              className="h-10 sm:h-12 md:h-14 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              // Convertimos los logos a un gris uniforme (brightness-0 invert opacity-40) y limitamos su altura para que encajen perfectos
+              className="h-9 sm:h-10 md:h-11 w-auto max-w-[160px] object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
             />
           </a>
         ))}
