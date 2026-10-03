@@ -93,10 +93,10 @@ export const VideosSection: React.FC = () => {
   const stallWatchdogRef = useRef<NodeJS.Timeout | number | null>(null);
   const skipDebounceRef = useRef<boolean>(false);
 
-  // Embed URL pointing directly to the live YouTube Playlist with 1080p HD parameters
+   // Embed URL pointing directly to the live YouTube Playlist with 1080p HD parameters and closed captions completely disabled
   const initialEmbedUrl = useMemo(() => {
     const origin = typeof window !== 'undefined' ? window.location.origin : '';
-    return `https://www.youtube.com/embed/${DEFAULT_VIDEO_ID}?list=${YOUTUBE_PLAYLIST_ID}&listType=playlist&enablejsapi=1&autoplay=1&playsinline=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&loop=1&vq=hd1080&hd=1&origin=${encodeURIComponent(
+    return `https://www.youtube.com/embed/${DEFAULT_VIDEO_ID}?list=${YOUTUBE_PLAYLIST_ID}&listType=playlist&enablejsapi=1&autoplay=1&playsinline=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&loop=1&vq=hd1080&hd=1&origin=${encodeURIComponent(
       origin
     )}`;
   }, []);
@@ -118,11 +118,17 @@ export const VideosSection: React.FC = () => {
     }, 3200);
   }, []);
 
-  // Enforce locked 1080p Full HD (or highest available HD/4K) quality via API & postMessage bridging
+    // Enforce locked 1080p Full HD (or highest available HD/4K) quality via API & postMessage bridging, and completely disable CC/subtitles
   const forceMaximumQuality = useCallback((player: any) => {
-    // 1. Direct API quality enforcement
+    // 1. Direct API quality & subtitle enforcement
     if (player) {
       try {
+        // Disable subtitles/captions
+        player.unloadModule?.('captions');
+        player.unloadModule?.('cc');
+        player.setOption?.('captions', 'track', {});
+
+        // Force maximum quality
         const available = player.getAvailableQualityLevels?.() || [];
         if (available.includes('hd1080')) {
           player.setPlaybackQuality('hd1080');
@@ -147,20 +153,24 @@ export const VideosSection: React.FC = () => {
     try {
       if (iframeRef.current?.contentWindow) {
         const target = iframeRef.current.contentWindow;
+        
+        // Force 1080p/HighRes quality
         target.postMessage(
-          JSON.stringify({
-            event: 'command',
-            func: 'setPlaybackQuality',
-            args: ['hd1080'],
-          }),
+          JSON.stringify({ event: 'command', func: 'setPlaybackQuality', args: ['hd1080'] }),
           '*'
         );
         target.postMessage(
-          JSON.stringify({
-            event: 'command',
-            func: 'setPlaybackQualityRange',
-            args: ['hd1080', 'highres'],
-          }),
+          JSON.stringify({ event: 'command', func: 'setPlaybackQualityRange', args: ['hd1080', 'highres'] }),
+          '*'
+        );
+        
+        // Force disable captions modules
+        target.postMessage(
+          JSON.stringify({ event: 'command', func: 'unloadModule', args: ['captions'] }),
+          '*'
+        );
+        target.postMessage(
+          JSON.stringify({ event: 'command', func: 'unloadModule', args: ['cc'] }),
           '*'
         );
       }
