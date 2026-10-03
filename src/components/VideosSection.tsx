@@ -587,9 +587,13 @@ export const VideosSection: React.FC = () => {
             </span>
           </h2>
 
-          {/* Urban marker/spray underline */}
-          <div className="mx-auto mt-2 h-1.5 w-36 sm:w-52 rounded-full bg-gradient-to-r from-[#25F4EE] via-[#D92CFF] to-transparent shadow-[0_0_12px_#D92CFF]" />
-
+                    {/* Aesthetic Cyber/Neon Underline */}
+          <div className="mx-auto mt-4 flex items-center justify-center gap-2">
+            <div className="h-[2px] w-16 sm:w-24 bg-gradient-to-r from-transparent to-[#D92CFF] opacity-80" />
+            <div className="h-1.5 w-6 rounded-full bg-[#F03BBE] shadow-[0_0_12px_#F03BBE]" />
+            <div className="h-[2px] w-16 sm:w-24 bg-gradient-to-l from-transparent to-[#7136FF] opacity-80" />
+          </div>
+          
           <p className="mt-4 text-xs sm:text-sm font-mono-tech text-[#DDD6E5]/80 max-w-xl mx-auto uppercase tracking-wider">
             Streaming ininterrumpido en alta fidelidad · Sesiones oficiales y videoclips de la cultura urbana
           </p>
