@@ -30,33 +30,29 @@ export interface TVVideoTrack {
 }
 
 // Client Logos Marquee (EverWonder Studio Style)
+// Client Logos Marquee (EverWonder Studio Style)
 export const LogoMarqueePreview: React.FC = () => {
-  // Local logos from the user's LOGOS folder, scaled to match the size of Tinder/OnlyFans/Hinge SVGs
+  // Solo vectores SVG perfectamente recortados para asegurar que todos escalen parejo a la misma altura
   const logos = [
-    { name: 'OnlyFans', url: '/logos/onlyfans-wordmark-1.svg', link: 'https://onlyfans.com/', customScale: 'scale-100' },
-    { name: 'Tinder', url: '/logos/tinder.svg', link: 'https://tinder.com/', customScale: 'scale-100' },
-    { name: 'Hinge', url: '/logos/hinge.svg', link: 'https://hinge.co/', customScale: 'scale-100' },
-    { name: 'Pornhub', url: '/logos/pornhub.svg', link: 'https://www.pornhub.com/', customScale: 'scale-110' },
-    { name: 'TikTok', url: '/logos/tiktok-logo-2-3.svg', link: 'https://tiktok.com/', customScale: 'scale-100' },
-    { name: 'Instagram', url: '/logos/instagram-1.svg', link: 'https://instagram.com/', customScale: 'scale-100' },
-    { name: 'Kick', url: '/logos/KICK (White).svg', link: 'https://kick.com/', customScale: 'scale-110' },
-    { name: 'Stake', url: '/logos/Stake_logo.svg', link: 'https://stake.com/', customScale: 'scale-125' },
-    { name: 'Netflix', url: '/logos/netflix.avif', link: 'https://www.netflix.com/', customScale: 'scale-[1.8]' },
-    { name: 'Disney', url: '/logos/disney.avif', link: 'https://www.disney.com/', customScale: 'scale-[1.8]' },
-    { name: 'HBO Max', url: '/logos/HBO MAX.avif', link: 'https://www.max.com/', customScale: 'scale-[1.8]' },
-    { name: 'Prime Video', url: '/logos/PRIME VIDEO.avif', link: 'https://primevideo.com/', customScale: 'scale-[1.8]' },
-    { name: 'Universal', url: '/logos/6aaadbcddb38d964fac08e83_Universal.avif', link: 'https://universalpictures.com/', customScale: 'scale-[1.8]' },
-    { name: 'Paramount+', url: '/logos/PARAMOUNT PLUS.avif', link: 'https://paramountplus.com/', customScale: 'scale-[1.8]' },
-    { name: 'NBA', url: '/logos/nba.avif', link: 'https://www.nba.com/', customScale: 'scale-[1.8]' },
-    { name: 'NFL', url: '/logos/nfl.avif', link: 'https://www.nfl.com/', customScale: 'scale-[1.8]' },
-    { name: 'YouTube', url: '/logos/youtube.avif', link: 'https://www.youtube.com/', customScale: 'scale-[1.8]' },
-    { name: 'CNN', url: '/logos/cnn.avif', link: 'https://www.cnn.com/', customScale: 'scale-[1.8]' },
-    { name: 'Red Bull', url: '/logos/redbull.avif', link: 'https://www.redbull.com/', customScale: 'scale-[1.8]' },
-    { name: 'Hulu', url: '/logos/HULU.avif', link: 'https://hulu.com/', customScale: 'scale-[1.8]' },
-    { name: 'DAZN', url: '/logos/DAZN.avif', link: 'https://dazn.com/', customScale: 'scale-[1.8]' },
-    { name: 'FOX', url: '/logos/fox.avif', link: 'https://www.fox.com/', customScale: 'scale-[1.8]' },
-    { name: 'NBC', url: '/logos/nbc.avif', link: 'https://www.nbc.com/', customScale: 'scale-[1.8]' },
-    { name: 'CBS', url: '/logos/cbs.avif', link: 'https://www.cbs.com/', customScale: 'scale-[1.8]' }
+    { name: 'OnlyFans', url: '/logos/onlyfans-wordmark-1.svg', link: 'https://onlyfans.com/' },
+    { name: 'Tinder', url: '/logos/tinder.svg', link: 'https://tinder.com/' },
+    { name: 'Hinge', url: '/logos/hinge.svg', link: 'https://hinge.co/' },
+    { name: 'TikTok', url: '/logos/tiktok.svg', link: 'https://tiktok.com/' },
+    { name: 'Netflix', url: '/logos/netflix.svg', link: 'https://www.netflix.com/' },
+    { name: 'Disney', url: '/logos/disney.svg', link: 'https://www.disney.com/' },
+    { name: 'Max', url: '/logos/max.svg', link: 'https://www.max.com/' },
+    { name: 'Prime Video', url: '/logos/primevideo.svg', link: 'https://primevideo.com/' },
+    { name: 'YouTube', url: '/logos/youtube.svg', link: 'https://youtube.com/' },
+    { name: 'CNN', url: '/logos/cnn.svg', link: 'https://cnn.com/' },
+    { name: 'NFL', url: '/logos/nfl.svg', link: 'https://nfl.com/' },
+    { name: 'Pornhub', url: '/logos/pornhub.png', link: 'https://pornhub.com/' },
+    { name: 'NBA', url: 'https://cdn.worldvectorlogo.com/logos/nba-1.svg', link: 'https://nba.com/' },
+    { name: 'Red Bull', url: 'https://cdn.worldvectorlogo.com/logos/redbull-1.svg', link: 'https://redbull.com/' },
+    { name: 'Paramount+', url: 'https://cdn.worldvectorlogo.com/logos/paramount-plus-1.svg', link: 'https://paramountplus.com/' },
+    { name: 'CBS', url: 'https://cdn.worldvectorlogo.com/logos/cbs-1.svg', link: 'https://cbs.com/' },
+    { name: 'NBC', url: 'https://cdn.worldvectorlogo.com/logos/nbc-4.svg', link: 'https://nbc.com/' },
+    { name: 'Fox', url: 'https://cdn.worldvectorlogo.com/logos/fox-3.svg', link: 'https://fox.com/' },
+    { name: 'Instagram', url: '/logos/instagram.png', link: 'https://instagram.com/' }
   ];
 
   return (
@@ -64,7 +60,7 @@ export const LogoMarqueePreview: React.FC = () => {
       {/* El grupo [animation-play-state:paused] detiene el movimiento al pasar el mouse encima para poder hacer click */}
       <div 
         className="animate-marquee group-hover:[animation-play-state:paused] flex items-center whitespace-nowrap w-max gap-16 sm:gap-28 px-8"
-        style={{ animationDuration: '60s' }} // Hace que vayan mucho más despacio
+        style={{ animationDuration: '60s' }} // Hace que vayan mucho mas despacio
       >
         {logos.concat(logos).concat(logos).map((logo, i) => (
           <a 
@@ -72,15 +68,15 @@ export const LogoMarqueePreview: React.FC = () => {
             href={logo.link}
             target="_blank"
             rel="noopener noreferrer"
-            // Dejamos el h-12/h-16 idéntico para la caja, pero usaremos el scale de cada imagen para compensar el margen invisible de los AVIF
-            className="flex items-center justify-center shrink-0 cursor-pointer h-12 sm:h-16 md:h-20 w-32 sm:w-40 md:w-48 overflow-visible"
+            // Dejamos el h-12/h-16 identico para la caja, eliminando el w-* para que las palabras largas se extiendan
+            className="flex items-center justify-center shrink-0 cursor-pointer h-12 sm:h-16 md:h-20"
             title={`Visitar ${logo.name}`}
           >
             <img 
               src={logo.url} 
               alt={logo.name} 
-              // Se aplica el customScale a los avif para que se vean igual de grandes que Tinder/Onlyfans
-              className={`max-h-full max-w-full object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 transition-all duration-300 ${logo.customScale} hover:!scale-[2.0]`}
+              // Al ser SVG puros, h-full y w-auto forzaran a que TODOS compartan la misma altura titanica de Tinder sin trucos
+              className="h-full w-auto object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
             />
           </a>
         ))}
