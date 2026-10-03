@@ -36,7 +36,7 @@ export const LogoMarqueePreview: React.FC = () => {
     { name: 'Netflix', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a3a482bd74707a4d0bb4e07_client-logo-netflix.avif', link: 'https://www.netflix.com/' },
     { name: 'Disney', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a3a4832536154d2e1043ce4_client-logo-disney.avif', link: 'https://www.disney.com/' },
     { name: 'OnlyFans', url: 'https://upload.wikimedia.org/wikipedia/en/c/cc/OnlyFans_logo.svg', link: 'https://onlyfans.com/' },
-    { name: 'Pornhub', url: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Pornhub-logo.svg', link: 'https://www.pornhub.com/' },
+    { name: 'Pornhub', url: 'https://cdn.iconscout.com/icon/free/png-256/free-pornhub-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-3030222.png', link: 'https://www.pornhub.com/' },
     { name: 'Tinder', url: 'https://upload.wikimedia.org/wikipedia/commons/7/74/TinderLogo-2017.svg', link: 'https://tinder.com/' },
     { name: 'Hinge', url: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Hinge_logo.svg', link: 'https://hinge.co/' },
     { name: 'CNN', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a3a45d743a24b619ab92c8e_client-logo-cnn.avif', link: 'https://www.cnn.com/' },
@@ -57,21 +57,22 @@ export const LogoMarqueePreview: React.FC = () => {
   return (
     <div className="w-full mt-16 sm:mt-24 pt-10 pb-10 border-t border-white/10 overflow-hidden select-none relative group">
       {/* El grupo [animation-play-state:paused] detiene el movimiento al pasar el mouse encima para poder hacer click */}
-      <div className="animate-marquee group-hover:[animation-play-state:paused] flex items-center whitespace-nowrap w-max gap-12 sm:gap-20 px-8">
+      <div className="animate-marquee group-hover:[animation-play-state:paused] flex items-center whitespace-nowrap w-max gap-8 sm:gap-16 px-8">
         {logos.concat(logos).concat(logos).map((logo, i) => (
           <a 
             key={`${logo.name}-${i}`} 
             href={logo.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center shrink-0 cursor-pointer"
+            // Se usa un contenedor flexible con medidas fijas amplias para que todos los logos compartan el mismo espacio equitativo
+            className="flex items-center justify-center shrink-0 cursor-pointer w-28 sm:w-36 md:w-44 h-12 sm:h-16"
             title={`Visitar ${logo.name}`}
           >
             <img 
               src={logo.url} 
               alt={logo.name} 
-              // Convertimos los logos a un gris uniforme (brightness-0 invert opacity-40) y limitamos su altura para que encajen perfectos
-              className="h-9 sm:h-10 md:h-11 w-auto max-w-[160px] object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
+              // max-h-full y max-w-full aseguran que escalen hasta el borde del contenedor sin deformarse, logrando un balance de tamaño
+              className="max-h-full max-w-full object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
             />
           </a>
         ))}
@@ -79,6 +80,7 @@ export const LogoMarqueePreview: React.FC = () => {
     </div>
   );
 };
+
 
 export const VideosSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
