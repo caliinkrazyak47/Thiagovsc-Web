@@ -29,53 +29,41 @@ export interface TVVideoTrack {
   duration?: string;
 }
 
-// Client Logos Marquee (EverWonder Studio Style)
+// Massive Everwonder Studio-style Marquee
 export const LogoMarqueePreview: React.FC = () => {
-  // Exactly the same logos used on everwonder.studio + Links to official websites, with the new requested brands
-  const logos = [
-    { name: 'Netflix', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a3a482bd74707a4d0bb4e07_client-logo-netflix.avif', link: 'https://www.netflix.com/' },
-    { name: 'Disney', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a3a4832536154d2e1043ce4_client-logo-disney.avif', link: 'https://www.disney.com/' },
-    { name: 'OnlyFans', url: 'https://upload.wikimedia.org/wikipedia/en/c/cc/OnlyFans_logo.svg', link: 'https://onlyfans.com/' },
-    { name: 'Pornhub', url: 'https://cdn.iconscout.com/icon/free/png-256/free-pornhub-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-3030222.png', link: 'https://www.pornhub.com/' },
-    { name: 'Tinder', url: 'https://upload.wikimedia.org/wikipedia/commons/7/74/TinderLogo-2017.svg', link: 'https://tinder.com/' },
-    { name: 'Hinge', url: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Hinge_logo.svg', link: 'https://hinge.co/' },
-    { name: 'CNN', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a3a45d743a24b619ab92c8e_client-logo-cnn.avif', link: 'https://www.cnn.com/' },
-    { name: 'Red Bull', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a3a45cc6de84f74aa358745_client-logo-red-bull.avif', link: 'https://www.redbull.com/' },
-    { name: 'NFL', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a3a45bfe2e7d26264cc9d4f_client-logo-nfl.avif', link: 'https://www.nfl.com/' },
-    { name: 'CBS', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a5df096d035020513e820d2_6a3a45e46078291fafc267f8_client-logo-cbs.avif', link: 'https://www.cbs.com/' },
-    { name: 'NBC', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a6144b39de2ade662159997_NBC_Logo.avif', link: 'https://www.nbc.com/' },
-    { name: 'NBA', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a5a58300525f2233102c308_NBA_Logo.avif', link: 'https://www.nba.com/' },
-    { name: 'FOX', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a613ab1aa8fcd8d62b6c033_FOX_Logo.avif', link: 'https://www.fox.com/' },
-    { name: 'YouTube', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a5df0b5c0a6a42dbf55fef3_6a5a55b200450ace689f38b6_YouTube_Logo.avif', link: 'https://www.youtube.com/' },
-    { name: 'HBO Max', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a6145d97912359524218290_HBOMax_LOGO.avif', link: 'https://www.max.com/' },
-    { name: 'FIFA', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a60e6d6cdb9190f605a810c_FIFA_Logo.avif', link: 'https://www.fifa.com/' },
-    { name: 'TNT', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6a60e6ee3388926c0b013d9e_TNT_Logo.avif', link: 'https://www.tntdrama.com/' },
-    { name: 'Universal', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6aaadbcddb38d964fac08e83_Universal.avif', link: 'https://www.universalpictures.com/' },
-    { name: 'Paramount+', url: 'https://cdn.prod.website-files.com/69e109273965ff9c88a8efa4/6aaadc08db38d964fac0c963_P%2B.avif', link: 'https://www.paramountplus.com/' }
+  const words = [
+    'THIAGOVSC',
+    'TV ONLINE',
+    'LIVE BROADCAST',
+    'URBAN BEATS',
+    'EXCLUSIVE',
   ];
 
   return (
-    <div className="w-full mt-16 sm:mt-24 pt-10 pb-10 border-t border-white/10 overflow-hidden select-none relative group">
-      {/* El grupo [animation-play-state:paused] detiene el movimiento al pasar el mouse encima para poder hacer click */}
-      <div className="animate-marquee group-hover:[animation-play-state:paused] flex items-center whitespace-nowrap w-max gap-8 sm:gap-16 px-8">
-        {logos.concat(logos).concat(logos).map((logo, i) => (
-          <a 
-            key={`${logo.name}-${i}`} 
-            href={logo.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            // Se usa un contenedor flexible con medidas fijas amplias para que todos los logos compartan el mismo espacio equitativo
-            className="flex items-center justify-center shrink-0 cursor-pointer w-28 sm:w-36 md:w-44 h-12 sm:h-16"
-            title={`Visitar ${logo.name}`}
-          >
-            <img 
-              src={logo.url} 
-              alt={logo.name} 
-              // max-h-full y max-w-full aseguran que escalen hasta el borde del contenedor sin deformarse, logrando un balance de tamaño
-              className="max-h-full max-w-full object-contain brightness-0 invert opacity-40 hover:brightness-100 hover:invert-0 hover:opacity-100 hover:scale-110 transition-all duration-300"
-            />
-          </a>
-        ))}
+    <div className="w-full mt-16 sm:mt-24 pt-10 pb-10 border-t border-white/10 overflow-hidden select-none hover:bg-white/[0.02] transition-colors relative">
+      {/* Sombras a los lados para que el texto desaparezca suavemente */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#120A1D] via-transparent to-[#120A1D] z-10 pointer-events-none" />
+      
+      <div className="animate-marquee flex items-center whitespace-nowrap w-max">
+        {/* Repetimos la lista 4 veces para garantizar un loop infinito perfecto */}
+        {words.concat(words).concat(words).concat(words).map((word, i) => {
+          // Alternamos: Una palabra sólida y la siguiente hueca con borde blanco (stroke)
+          const isOutline = i % 2 !== 0;
+          
+          return (
+            <div key={`brand-${i}`} className="flex items-center shrink-0">
+              <span 
+                className="text-6xl sm:text-8xl md:text-[9rem] leading-none font-condensed font-black tracking-tighter uppercase px-6 transition-transform hover:scale-105 cursor-default"
+                style={isOutline ? { WebkitTextStroke: '2px rgba(255,255,255,0.7)', color: 'transparent' } : { color: '#FAF8FC' }}
+              >
+                {word}
+              </span>
+              <span className="text-[#25F4EE] text-4xl sm:text-6xl md:text-7xl px-4 animate-pulse opacity-80">
+                ✦
+              </span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
