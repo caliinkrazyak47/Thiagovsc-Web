@@ -93,7 +93,7 @@ export const RADIO_STATIONS: RadioStation[] = [
     location: 'Santo Domingo, RD',
     tagline: 'El movimiento urbano más influyente',
     genre: 'Urbano / Dembow / Entrevistas',
-    streamUrl: 'https://radiordomi.com:8566/stream',
+    streamUrl: 'https://radiordomi.com/8566/stream?shoutcast',
     coverImage: '/images/radios/alofoke.jpg',
     brandColor: '#FF1100',
     badge: 'ALOFOKE',
